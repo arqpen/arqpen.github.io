@@ -1,121 +1,406 @@
-# Ionicons
+# Feather
 
-[Ionicons](http://ionicons.com/) is a completely open-source icon set with 1,300 icons crafted for web, iOS, Android, and desktop apps. Ionicons was built for [Ionic Framework](https://ionicframework.com/), so icons have both Material Design and iOS versions.
+[![Build status](https://img.shields.io/travis/feathericons/feather/master.svg?style=flat-square)](https://travis-ci.org/feathericons/feather)
+[![Coverage](https://img.shields.io/codecov/c/github/feathericons/feather/master.svg?style=flat-square)](https://codecov.io/gh/feathericons/feather)
+[![npm downloads](https://img.shields.io/npm/dm/feather-icons.svg?style=flat-square)](https://www.npmjs.com/package/feather-icons)
+[![npm version](https://img.shields.io/npm/v/feather-icons.svg?style=flat-square)](https://www.npmjs.com/package/feather-icons)
+[![CDNJS version](https://img.shields.io/cdnjs/v/feather-icons.svg?style=flat-square)](https://cdnjs.com/libraries/feather-icons)
+[![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://www.paypal.me/colebemis/5)
 
-Note: All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Ionic, nor vice versa.
+## What is Feather?
 
-We intend for this icon pack to be used with [Ionic](http://ionicframework.com/), but it’s by no means limited to it. Use them wherever you see fit, personal or commercial. They are free to use and licensed under [MIT](http://opensource.org/licenses/MIT).
+Feather is a collection of simply beautiful open source icons. Each icon is designed on a 24x24 grid with an emphasis on simplicity, consistency, and flexibility.
 
+https://feathericons.com
+
+```shell
+npm install feather-icons
+```
+
+## Table of Contents
+
+* [Quick Start](#quick-start)
+* [Usage](#usage)
+  * [Client-side JavaScript](#client-side-javascript)
+  * [Node](#node)
+  * [SVG Sprite](#svg-sprite)
+  * [Figma](#figma)
+* [API Reference](#api-reference)
+	* [`feather.icons`](#feathericons)
+	* [`feather.icons[name].toSvg()`](#feathericonsnametosvgattrs)
+	* [`feather.replace()`](#featherreplaceattrs)
+	* [(DEPRECATED) `feather.toSvg()`](#deprecated-feathertosvgname-attrs)
+* [Contributing](#contributing)
+* [Related Projects](#related-projects)
+* [License](#license)
+
+## Quick Start
+
+Start with this [CodePen Template](https://codepen.io/pen?template=WOJZdM) to begin prototyping with Feather in the browser.
+
+Or copy and paste the following code snippet into a blank `html` file.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <title></title>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <body>
+
+    <!-- example icon -->
+    <i data-feather="circle"></i>
+
+    <script>
+      feather.replace()
+    </script>
+  </body>
+</html>
+```
+
+## Usage
+
+At its core, Feather is a collection of [SVG](https://svgontheweb.com/#svg) files. This means that you can use Feather icons in all the same ways you can use SVGs (e.g. `img`, `background-image`, `inline`, `object`, `embed`, `iframe`). Here's a helpful article detailing the many ways SVGs can be used on the web: [SVG on the Web – Implementation Options](https://svgontheweb.com/#implementation)
+
+The following are additional ways you can use Feather.
+
+### Client-side JavaScript
+
+#### 1. Install
+
+> **Note:** If you intend to use Feather with a CDN, you can skip this installation step.
+
+Install with [npm](https://docs.npmjs.com/getting-started/what-is-npm).
+
+```shell
+npm install feather-icons --save
+```
+
+Or just copy [`feather.js`](https://unpkg.com/feather-icons/dist/feather.js) or [`feather.min.js`](https://unpkg.com/feather-icons/dist/feather.min.js) into your project directory. You don't need both `feather.js` and `feather.min.js`.
+
+#### 2. Include
+
+Include `feather.js` or `feather.min.js` with a `<script>` tag:
+
+```html
+<script src="path/to/dist/feather.js"></script>
+```
+
+> **Note:** `feather.js` and `feather.min.js` are located in the `dist` directory of the npm package.
+
+Or load the script from a CDN provider:
+
+```html
+<!-- choose one -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+```
+
+After including the script, `feather` will be available as a global variable.
+
+#### 3. Use
+
+To use an icon on your page, add a `data-feather` attribute with the icon name to an element:
+
+```html
+<i data-feather="circle"></i>
+```
+
+See the complete list of icons at [feathericons.com](https://feathericons.com).
+
+#### 4. Replace
+
+Call the `feather.replace()` method:
+
+```html
+<script>
+  feather.replace()
+</script>
+```
+
+All elements that have a `data-feather` attribute will be replaced with SVG markup corresponding to their `data-feather` attribute value. See the [API Reference](#api-reference) for more information about `feather.replace()`.
+
+### Node
+#### 1. Install
+
+Install with [npm](https://docs.npmjs.com/getting-started/what-is-npm):
+
+```shell
+npm install feather-icons --save
+```
+
+#### 2. Require
+
+```js
+const feather = require('feather-icons')
+```
+
+#### 3. Use
+
+```js
+feather.icons.x
+// {
+//    name: 'x',
+//    contents: '<line ... /><line ... />`,
+//    tags: ['cancel', 'close', 'delete', 'remove'],
+//    attrs: {
+//      class: 'feather feather-x',
+//      xmlns: 'http://www.w3.org/2000/svg',
+//      width: 24,
+//      height: 24,
+//      viewBox: '0 0 24 24',
+//      fill: 'none',
+//      stroke: 'currentColor',
+//      'stroke-width': 2,
+//      'stroke-linecap': 'round',
+//      'stroke-linejoin': 'round',
+//    },
+//    toSvg: [Function],
+// }
+
+feather.icons.x.toSvg()
+// <svg class="feather feather-x" ...><line ... /><line ... /></svg>
+
+feather.icons.x.toSvg({ class: 'foo bar', 'stroke-width': 1, color: 'red' })
+// <svg class="feather feather-x foo bar" stroke-width="1" color="red" ...><line ... /><line ... /></svg>
+```
+
+See the [API Reference](#api-reference) for more information about the available properties and methods of the `feather` object.
+
+### SVG Sprite
+
+#### 1. Install
+
+> **Note:** If you intend to use Feather with a CDN, you can skip this installation step.
+
+Install with [npm](https://docs.npmjs.com/getting-started/what-is-npm).
+
+```shell
+npm install feather-icons --save
+```
+
+Or just copy [`feather-sprite.svg`](https://unpkg.com/feather-icons/dist/feather-sprite.svg) into your project directory.
+
+#### 2. Use
+
+Include an icon on your page with the following markup:
+
+```html
+<svg
+  width="24"
+  height="24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <use href="path/to/feather-sprite.svg#circle"/>
+</svg>
+```
+
+> **Note:** `circle` in the above example can be replaced with any valid icon name. See the complete list of icon names at [feathericons.com](https://feathericons.com).
+
+However, this markup can be simplified using a simple CSS class to avoid repetition of SVG attributes between icons:
+
+```css
+.feather {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+```
+
+```html
+<svg class="feather">
+  <use href="path/to/dist/feather-sprite.svg#circle"/>
+</svg>
+```
+### Figma
+Feather is available as a [Figma component library](https://www.figma.com/file/dyJRSFTIajik4cdkcXN8yA3K/Feather-Component-Library). To use the components, log in to your Figma account and **duplicate** the file to your drafts.
+
+## API Reference
+
+### `feather.icons`
+
+An object with data about every icon.
+
+#### Usage
+
+```js
+feather.icons.x
+// {
+//    name: 'x',
+//    contents: '<line ... /><line ... />',
+//    tags: ['cancel', 'close', 'delete', 'remove'],
+//    attrs: {
+//      class: 'feather feather-x',
+//      xmlns: 'http://www.w3.org/2000/svg',
+//      width: 24,
+//      height: 24,
+//      viewBox: '0 0 24 24',
+//      fill: 'none',
+//      stroke: 'currentColor',
+//      'stroke-width': 2,
+//      'stroke-linecap': 'round',
+//      'stroke-linejoin': 'round',
+//    },
+//    toSvg: [Function],
+// }
+
+feather.icons.x.toString()
+// '<line ... /><line ... />'
+```
+
+> **Note:** `x` in the above example can be replaced with any valid icon name. See the complete list of icon names at [feathericons.com](https://feathericons.com). Icons with multi-word names (e.g. `arrow-right`) **cannot** be accessed using dot notation (e.g. `feather.icons.x`). Instead, use bracket notation (e.g. `feather.icons['arrow-right']`).
+
+[View Source](https://github.com/colebemis/feather/blob/master/src/icons.js)
+
+---
+
+### `feather.icons[name].toSvg([attrs])`
+
+Returns an SVG string.
+
+#### Parameters
+
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| `attrs` (optional) | Object |  Key-value pairs in the `attrs` object will be mapped to HTML attributes on the `<svg>` tag (e.g. `{ foo: 'bar' }` maps to `foo="bar"`). All default attributes on the `<svg>` tag can be overridden with the `attrs` object. |
+
+> **Hint:** You might find these SVG attributes helpful for manipulating icons:
+> * [`color`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color)
+> * [`width`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/width)
+> * [`height`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/height)
+> * [`stroke-width`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width)
+> * [`stroke-linecap`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap)
+> * [`stroke-linejoin`](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linejoin)
+
+#### Usage
+
+```js
+feather.icons.circle.toSvg()
+// '<svg class="feather feather-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>'
+
+feather.icons.circle.toSvg({ 'stroke-width': 1 })
+// '<svg class="feather feather-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>'
+
+feather.icons.circle.toSvg({ class: 'foo bar' })
+// '<svg class="feather feather-circle foo bar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>'
+```
+
+[View Source](https://github.com/colebemis/feather/blob/master/src/icon.js)
+
+---
+
+### `feather.replace([attrs])`
+
+Replaces all elements that have a `data-feather` attribute with SVG markup corresponding to the element's `data-feather` attribute value.
+
+#### Parameters
+
+| Name       | Type   | Description |
+| ---------- | ------ | ----------- |
+| `attrs` (optional)  | Object | Key-value pairs in the `attrs` object will be mapped to HTML attributes on the `<svg>` tag (e.g. `{ foo: 'bar' }` maps to `foo="bar"`). All default attributes on the `<svg>` tag can be overridden with the `attrs` object. |
+
+#### Usage
+
+> **Note:** `feather.replace()` only works in a browser environment.
+
+Simple usage:
+```html
+<i data-feather="circle"></i>
+<!--
+<i> will be replaced with:
+<svg class="feather feather-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+-->
+
+<script>
+  feather.replace()
+</script>
+```
+
+You can pass `feather.replace()` an `attrs` object:
+```html
+<i data-feather="circle"></i>
+<!--
+<i> will be replaced with:
+<svg class="feather feather-circle foo bar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+-->
+
+<script>
+  feather.replace({ class: 'foo bar', 'stroke-width': 1 })
+</script>
+```
+
+All attributes on the placeholder element (i.e. `<i>`) will be copied to the `<svg>` tag:
+
+```html
+<i data-feather="circle" id="my-circle" class="foo bar" stroke-width="1"></i>
+<!--
+<i> will be replaced with:
+<svg id="my-circle" class="feather feather-circle foo bar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>
+-->
+
+<script>
+  feather.replace()
+</script>
+```
+
+[View Source](https://github.com/colebemis/feather/blob/master/src/replace.js)
+
+---
+
+### (DEPRECATED) `feather.toSvg(name, [attrs])`
+
+> **Note:** `feather.toSvg()` is deprecated. Please use `feather.icons[name].toSvg()` instead.
+
+Returns an SVG string.
+
+#### Parameters
+
+| Name      | Type   | Description |
+| --------- | ------ | ----------- |
+| `name`    | string | Icon name   |
+| `attrs` (optional) | Object |  Key-value pairs in the `attrs` object will be mapped to HTML attributes on the `<svg>` tag (e.g. `{ foo: 'bar' }` maps to `foo="bar"`). All default attributes on the `<svg>` tag can be overridden with the `attrs` object. |
+
+#### Usage
+
+```js
+feather.toSvg('circle')
+// '<svg class="feather feather-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>'
+
+feather.toSvg('circle', { 'stroke-width': 1 })
+// '<svg class="feather feather-circle" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>'
+
+feather.toSvg('circle', { class: 'foo bar' })
+// '<svg class="feather feather-circle foo bar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>'
+```
+
+[View Source](https://github.com/colebemis/feather/blob/master/src/to-svg.js)
 
 ## Contributing
 
-Thanks for your interest in contributing! Read up on our guidelines for
-[contributing](https://github.com/ionic-team/ionicons/blob/master/.github/CONTRIBUTING.md)
-and then look through our issues with a [help wanted](https://github.com/ionic-team/ionicons/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
-label.
+For more info on how to contribute please see the [contribution guidelines](https://github.com/colebemis/feather/blob/master/CONTRIBUTING.md).
 
+Caught a mistake or want to contribute to the documentation? [Edit this page on Github](https://github.com/colebemis/feather/blob/master/README.md)
 
-## Using the Web Component
+## Related Projects
 
-The Ionicons Web Component is an easy and performant way to use Ionicons in your app. The component will dynamically load an SVG for each icon, so your app is only requesting the icons that you need.
-
-Also note that only visible icons are loaded, and icons which are "below the fold" and hidden from the user's view do not make fetch requests for the svg resource.
-
-### Installation
-
-If you're using [Ionic Framework](https://ionicframework.com/), Ionicons is packaged by default, so no installation is necessary. Want to use Ionicons without Ionic Framework? Place the following `<script>` near the end of your page, right before the closing </body> tag, to enable them.
-
-```html
-<script src="https://unpkg.com/ionicons@latest/dist/ionicons.js"></script>
-```
-
-### Basic usage
-
-To use a built-in icon from the Ionicons package, populate the `name` attribute on the ion-icon component:
-
-```html
-<ion-icon name="heart"></ion-icon>
-```
-
-### Custom icons
-
-To use a custom SVG, provide its url in the `src` attribute to request the external SVG file. The `src` attribute works the same as `<img src="...">` in that the url must be accessible from the webpage that's making a request for the image. Additionally, the external file can only be a valid svg and does not allow scripts or events within the svg element.
-
-```html
-<ion-icon src="/path/to/external/file.svg"></ion-icon>
-```
-
-## Variants
-Each app icon in Ionicons has a `filled`, `outline` and `sharp` variant. These different variants are provided to make your app feel native to a variety of platforms. The filled variant uses the default name without a suffix. Note: Logo icons do not have outline or sharp variants.
-
-```html
-<ion-icon name="heart"></ion-icon> <!--filled-->
-<ion-icon name="heart-outline"></ion-icon> <!--outline-->
-<ion-icon name="heart-sharp"></ion-icon> <!--sharp-->
-```
-
-### Platform specificity
-When using icons in Ionic Framework you can specify different icons per platform. Use the `md` and `ios` attributes and provide the platform specific icon/variant name.
-
-```html
-<ion-icon ios="heart-outline" md="heart-sharp"></ion-icon>
-```
-
-## Size
-
-To specify the icon size, you can use the size attribute for our pre-defined font sizes.
-
-```html
-<ion-icon size="small"></ion-icon>
-<ion-icon size="large"></ion-icon>
-```
-
-Or you can set a specific size by applying the `font-size` CSS property on the `ion-icon` component. It's recommended to use pixel sizes that are a multiple of 8 (8, 16, 32, 64, etc.)
-
-```css
-ion-icon {
-  font-size: 64px;
-}
-```
-
-## Color
-
-Specify the icon color by applying the `color` CSS property on the `ion-icon` component.
-
-```css
-ion-icon {
-  color: blue;
-}
-```
-
-## Stroke width
-When using an `outline` icon variant it is possible to adjust the stroke width, for improved visual balance relative to the icon's size or relative to the width of adjacent text. You can set a specific size by applying the `--ionicon-stroke-width` CSS custom property to the `ion-icon` component. The default value is 32px.
-
-```html
-<ion-icon name="heart-outline"></ion-icon>
-```
-
-```css
-ion-icon {
-  --ionicon-stroke-width: 16px;
-}
-```
-
-## Migrating from v4
-
-See the [5.0 release notes](https://github.com/ionic-team/ionicons/releases/tag/5.0.0) for a list of icon deletions/renames.
+ - [angular-feather](https://github.com/michaelbazos/angular-feather) - Feather icons for Angular applications
+ - [elm-feather](https://github.com/1602/elm-feather) - Feather icons for Elm applications
+ - [react-feather](https://github.com/carmelopullara/react-feather) - Feather icons as React components
+ - [sketch-feather](https://github.com/odmln/sketch-feather) - Feather icons as a Sketch library
+ - [vue-feather-icons](https://github.com/egoist/vue-feather-icons) - Feather icons as Vue components
+ - [php-feather](https://github.com/Pixelrobin/php-feather) - Feather icons as a PHP Library
+ - [wp-php-feather](https://github.com/reatlat/wp-php-feather) - Feather icons as a WordPress template tag
+ - [django-feather](https://pypi.org/project/django-feather/) - Feather icons as Django Template Tag
+ - [svelte-feather-icons](https://github.com/dylanblokhuis/svelte-feather-icons) - Feather icons as Svelte components
+ - [gulp-feather](https://github.com/oToToT/gulp-feather) - Feather icons renderng using gulp
 
 ## License
 
-Ionicons is licensed under the [MIT license](http://opensource.org/licenses/MIT).
-
-
-## Related
-
-* [Ionicons Homepage](http://ionicons.com/)
-* [Ionic Framework](https://ionicframework.com/)
-* [Ionic Worldwide Slack](http://ionicworldwide.herokuapp.com/)
-* [Ionic Forum](https://forum.ionicframework.com/)
-* [Stencil](https://stenciljs.com/)
-* [Stencil Worldwide Slack](https://stencil-worldwide.slack.com)
-* [Capacitor](https://capacitorjs.com/)
+Feather is licensed under the [MIT License](https://github.com/colebemis/feather/blob/master/LICENSE).
