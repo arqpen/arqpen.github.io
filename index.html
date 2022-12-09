@@ -34,7 +34,7 @@
       <li><a href="#">About</a></li>
       <li><a href="#">Graphics</a></li>
       <li><a href="#">Usage</a></li>
-      <li><a href="#">GitHub</a></li>
+      <li><a href="https://github.com/arqpen/arqpen.github.io">GitHub</a></li>
     </ul>
       
       <span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-toggle-left"><rect x="1" y="5" width="22" height="14" rx="7" ry="7"></rect><circle cx="8" cy="12" r="3"></circle></svg></span>
@@ -63,6 +63,7 @@
   </div>
   </nav>
 <div class="secIn">
+<div class="boxCont">
 <main>
   <article class="content">
     <div>
@@ -82,11 +83,7 @@
       <p>This style is inspired by <a href="http://bettermotherfuckingwebsite.com/">this website</a>.</p>
       <h3>Subsection 1.1</h3>
       <p>This is a test code:</p>
-      <pre><code>#include <cstdio>
-int main()
-{
-    return 0;
-}</code></pre>
+      
       <h3>Subsection 1.2</h3>
       <p>This is a normal line.</p>
       <p><b>This is a bold line.</b></p>
@@ -125,6 +122,18 @@ int main()
     </div>
   </article>
 </main>
+<aside class="box">
+  <h3>Customize</h3>
+  <!-- color-->
+<input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55"> 
+ 
+<input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55" id="hexcolor"></input>
+  <!-- end color-->
+<label for="size">Size</label>
+<input type="range" id="size" min="12" max="100" step="4" value="24" class="css-1340obj">
+
+</aside>
+</div>
 </div>
 <footer>
   <div>
@@ -137,4 +146,5 @@ int main()
 <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
 
 <script src="js/main.js" type="text/javascript"></script>
+
 </html>
