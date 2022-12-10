@@ -12,3 +12,10 @@ $('#colorpicker').on('input', function() {
 $('#hexcolor').on('input', function() {
   $('#colorpicker').val(this.value);
 });
+
+
+//open 
+
+$( ".gphs >div" ).click(function() {
+  alert( "Handler for .click() called." );
+});

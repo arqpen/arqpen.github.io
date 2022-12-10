@@ -98,5 +98,7 @@ z-index: 3;
     top: 125px;   
 }
 main .gphs {display: flex;flex-wrap: wrap;}
-main .gphs >div{width: calc(25% - var(--boxM));height: 200px;margin-left: var(--boxM);margin-bottom: var(--boxM);}
+main .gphs >div{width: calc(25% - var(--boxM));height: 200px;margin-right: var(--boxM);margin-bottom: var(--boxM);}
 main .gphs >div{}
+
+.export{position: fixed;width: 100%;max-width: 1100px;bottom:var(--boxM);display: flex; justify-content:space-between ;z-index: 4;    box-shadow: 0 3px 10px 2px rgb(0 0 0 / 5%);}
