@@ -68,9 +68,10 @@ input[type="text"]:focus{box-shadow: 0 0 0 1px var(--keyC);
 .headerCt.sticky{ position: fixed;top:0;left:0;width:100%;-webkit-box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 6%);
     box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 6%);}
 .headerTop{height: 60px; display: flex;align-items:center;     justify-content: space-between;}
+.headerTop svg.logo{width: 40px;height: 40px;padding: 5px 0;fill: #000;}
 .headerTop a {display: flex;align-items: center;}
 .headerR{display: flex;align-items: center;}
-.headerTop a span{font-weight: bold;margin-left:var(--boxM);}
+.headerTop a span{font-weight: bold;}
 .headerTop ul{display: flex;margin-right: var(--boxM);}
 .headerTop ul li{margin-left: 10px;}
 
@@ -99,6 +100,6 @@ z-index: 3;
 }
 main .gphs {display: flex;flex-wrap: wrap;}
 main .gphs >div{width: calc(25% - var(--boxM));height: 200px;margin-right: var(--boxM);margin-bottom: var(--boxM);}
-main .gphs >div{}
+main .gphs >div:nth-child(4n){margin-right: 0;}
 
 .export{position: fixed;width: 100%;max-width: 1100px;bottom:var(--boxM);display: flex; justify-content:space-between ;z-index: 4;    box-shadow: 0 3px 10px 2px rgb(0 0 0 / 5%);}
