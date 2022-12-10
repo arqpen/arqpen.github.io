@@ -48,7 +48,7 @@
     <div class="secIn">
     <h2>Open source graphics.</h2>
     <h3>Lovingly hand-crafted for architects.</h3>
-    <p>Graphics of people, trees, cars... to use and set architectural projects, presentations, sheets. Support for SVG and Images. You can edit directly, no need to download you can copy to clipboard and add directly to your project. Completely open source, MIT licensed and built by Ionic.</p>
+    <p>Graphics of people, trees, cars... to use and set architectural projects, presentations, sheets. Support for SVG and Images. You can edit directly, no need to download you can copy to clipboard and add directly to your project. Completely open source, MIT licensed and built by Infinity Estudio.</p>
     <div class="box filter"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-1hy7qas"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
     <input type="text" name="filer" placeholder="Search graphics..."></div>
     </div>
@@ -65,6 +65,17 @@
 <div class="secIn">
 <div class="boxCont">
 <main>
+  <div class="gphs">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+    <div class="box">5</div>
+    <div class="box">6</div>
+    <div class="box">7</div>
+    <div class="box">8</div>
+
+  </div>
   <article class="content">
     <div>
       <h1>Article Title</h1>
@@ -124,14 +135,32 @@
 </main>
 <aside class="box">
   <h3>Customize</h3>
+<div class="sticky">
   <!-- color-->
-<input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55"> 
+<div><input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55"> 
  
-<input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55" id="hexcolor"></input>
+<input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55" id="hexcolor"></input></div>
   <!-- end color-->
-<label for="size">Size</label>
-<input type="range" id="size" min="12" max="100" step="4" value="24" class="css-1340obj">
+<div>
+  <label for="volume">Size</label>
+  <input type="range" id="volume" name="volume"
+         min="0" max="11">
+</div>
+<div>
+  <label for="volume">Stroke Width</label>
+  <input type="range" id="volume" name="volume"
+         min="0" max="11">
+</div>
+<div>
+      <input type="checkbox" id="scales" name="scales" checked>
+      <label for="scales">Shadows</label>
+    </div>
 
+    <div>
+      <input type="checkbox" id="horns" name="horns">
+      <label for="horns">Horns</label>
+    </div>
+</div>
 </aside>
 </div>
 </div>
