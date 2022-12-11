@@ -164,3 +164,37 @@ main .gphs >div{width: calc(25% - var(--boxM));height: auto;margin-right: var(--
 main .gphs >div:nth-child(4n){margin-right: 0;}
 
 .export{position: fixed;width: 100%;max-width: 1100px;bottom:var(--boxM);display: flex; align-items: center;justify-content:space-between ;z-index: 4;    box-shadow: 0 3px 10px 2px rgb(0 0 0 / 5%);}
+
+
+/* [Colores Svg] */
+
+/* Line Out */
+#aqpLo{    stroke: #402528;
+    stroke-linejoin: round;
+    stroke-width: 0.28px;
+fill: none;}
+
+/* Line In */
+#aqpLi{stroke: #402528;
+    stroke-linejoin: round;
+    stroke-width: 0.06px;fill: none;}
+
+/* Color 1 Shadow*/
+#aqpSh,#aqpSha{opacity: .2;}
+
+/* Color 1 Yellow*/
+#aqpCl{
+    fill: #FDD734;
+}
+#aqpSha{fill: #efa62c;opacity: 1;}
+
+/* Color 1 Dark*/
+#aqpCd{
+
+fill: #402528;
+}
+
+/* Color 1 Skin White*/
+#aqpCs{
+    fill: #ffffff;
+}

@@ -9,9 +9,11 @@ $(window).scroll(function(){
 //Color
 $('#colorpicker').on('input', function() {
     $('#hexcolor').val(this.value);
+    $("#aqpCl").css("fill", this.value);
 });
 $('#hexcolor').on('input', function() {
   $('#colorpicker').val(this.value);
+  $("#aqpCl").css("fill", this.value);
 });
 
 $('#colorpicker2').on('input', function() {
