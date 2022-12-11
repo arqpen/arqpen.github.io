@@ -89,8 +89,8 @@
       <nav>
          <div class="secIn">
           <select name="select">
-            <option value="people">People</option>
-            <option value="trees" selected>Trees</option>
+            <option value="people"selected>People</option>
+            <option value="trees">Trees</option>
             <option value="floors">Floors</option>
             <option value="floors">Cars</option>
           </select>
@@ -189,8 +189,7 @@
       <path d="M5.84,4.23s.17-.2,.33-.14c.15,.05,.2,.26,.17,.28-.02,.02-.1-.12-.27-.15-.13-.03-.23,.03-.24,0Z"/>
       <path d="M11.6,44.2c-.55-2.64-.5-7.81-.8-9.88-.05-.37-.14-.75-.26-1.13-.25-.81-.61-1.63-.95-2.31-.24-.48-.47-.9-.66-1.21-.02-.03-.04-.06-.06-.09-.07-.12-.14-.23-.18-.31-.02-.03-.04-.07-.06-.1-.01-.02-.03-.04-.04-.07-.01,.09-.09,.46-.41,1.8-.05-.17-.1-.42-.11-.72,0-.08,0-.24,.02-.42,.04-.3,.2-1.09,.47-1.17,.5-.13,1.61,2.03,2.17,3.7,.63,1.85,.77,3.36,.81,3.86,.13,1.65-.13,1.77-.1,3.86,.04,2.59,.45,4.1,.15,4.19Z"/>
       <path d="M12.72,26.37c-.33-.04-.25-.79-.8-1.13-.9-.54-2.01,.91-3.77,.85-.69-.02-1.43-.27-1.94-.61,.01,0,.02,0,.04,.01,0,0,0,0,.01,0,.39,.15,.84,.26,1.35,.29h0c.64,.04,1.38-.04,2.22-.32,.25-.08,.48-.17,.69-.26,.96-.4,1.46-.82,1.67-1.28,.12,.53,.31,1.4,.53,2.44Z"/>
-    </g>
-    <g id="aqpSha">
+
       <path class="cls-5" d="M4.7,16.5c.1-.61,.17-1.38,.1-2.27-.03-.39-.08-.75-.15-1.09,.3,.39,.66,1.29,.62,2.18-.01,.23-.05,.44,.08,.62,.14,.18,.38,.25,.63,.26-.43,.1-.85,.21-1.28,.31Z"/>
       <path class="cls-5" d="M10.94,17s.58,.24,1.15,.25c-.4-.32-.89-.59-1.49-.67-.28-.04-.54-.02-.79,.03,.12,.28,.27,.48,.38,.6,0,0-.27,.15-.85,.56-.3,.21-.69,.5-1.17,.87-1.39,1.07-4.05,.55-5.22,.52,0,0,.15,5.98,.55,6.19,0,0-.07-1.43,.54-1.21,.56,.2,.96,.68,.96,.68,0,0-.9-.67-1.08-1.64-.09-.51,.11-.62,.11-1.34,.02-1.24-.56-1.56-.35-1.97,.45-.91,3.19,.61,4.81-.74,.44-.36,.89-1.01,1.82-1.2,.33-.07,.62-.05,.81-.03-.06-.3-.12-.59-.18-.89Z"/>
       <path class="cls-5" d="M14.7,13.76l-.57,.54c-.1-.01-.21,.02-.25,.09-.02,.04-.03,.1,0,.15l-.37,.35s.04-.11,.02-.19c-.03-.1-.13-.13-.16-.14-.14-.05-.25,.05-.41,.09-.01,0-.03,0-.04,0l.82-.81,.96-.09Z"/>
@@ -270,15 +269,22 @@
                <!-- color-->
                <div>
                 <label for="">Color</label>
-                <input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#FDD734"> 
-                  <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#FDD734" id="hexcolor"></input>
+                <input type="color" id="aqp-cpk-1" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#FDD734"> 
+                  <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#FDD734" id="hexc-c1"></input>
                </div>
                <!-- end color-->
                <!-- color-->
                <div>
                 <label for="">Color</label>
-                <input type="color" id="colorpicker2" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#402528"> 
-                  <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#402528" id="hexcolor2"></input>
+                <input type="color" id="aqp-cpk-2" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#402528"> 
+                  <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#402528" id="hexc-c2"></input>
+               </div>
+               <!-- end color-->
+               <!-- color-->
+               <div>
+                <label for="">Color</label>
+                <input type="color" id="aqp-cpk-3" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#ffffff"> 
+                  <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#ffffff" id="hexc-c3"></input>
                </div>
                <!-- end color-->
                <div>
@@ -294,6 +300,11 @@
                <div>
                   <label for="scales">Shadows</label>
                   <input type="checkbox" id="scales" name="scales" checked>
+               </div>
+                  <div>
+                  <label for="volume">Opacity</label>
+                  <input type="range" id="shapeOpacity" name="opacity" min="0" max="100" value="20" step="5">
+                     <span id="shapeOpacityVar">20%</span>
                </div>
                <div>
                   <label for="horns">Silhouette only</label>
