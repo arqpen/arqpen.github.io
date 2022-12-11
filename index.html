@@ -73,10 +73,18 @@
       </header>
       <nav>
          <div class="secIn">
+          <select name="select">
+            <option value="people">People</option>
+            <option value="trees" selected>Trees</option>
+            <option value="floors">Floors</option>
+            <option value="floors">Cars</option>
+          </select>
+          <div>
             <a>Home</a>
             <a>Release</a>
             <a>About</a>
             <a>RSS</a>
+          </div>
          </div>
       </nav>
       <div class="secIn">
@@ -104,6 +112,15 @@
          <aside class="box">
             <h3>Customize</h3>
             <div class="sticky">
+              <div>
+              <label for="scale">Scale</label>
+                <select name="select">
+                <option value="people">1:200</option>
+                <option value="trees" selected>1:100</option>
+                <option value="floors">1:50</option>
+                <option value="floors">1:10</option>
+              </select>
+            </div>
                <!-- color-->
                <div><input type="color" id="colorpicker" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55"> 
                   <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#bada55" id="hexcolor"></input>
@@ -125,8 +142,9 @@
                </div>
                <div>
                   <input type="checkbox" id="horns" name="horns">
-                  <label for="horns">Horns</label>
+                  <label for="horns">Silhouette only</label>
                </div>
+
             </div>
          </aside>
       </div>
@@ -136,7 +154,9 @@
            <div><label>Nombre</label>
            <textarea>text text text</textarea>
            <span>Copiado!</span></div>
-           <div><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+           <div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
            </div>
         </div>
       </div>
