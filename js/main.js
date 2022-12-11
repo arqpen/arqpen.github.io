@@ -48,6 +48,17 @@ $('#shapeOpacity').on("change mousemove", function() {
 //open 
 
 $( ".gphs >div" ).click(function() {
-  alert( "Handler for .click() called." );
+  //alert( $(this).html());
+  $('.export textarea').val($(this).html());
 });
 
+
+function copy() {
+  var textarea = $('#textExport');
+  textarea.select();
+  document.execCommand("copy");
+  $('.notCopy').show();
+  setTimeout(function() {
+        $(".notCopy").fadeOut(800);
+    },2000);
+}
