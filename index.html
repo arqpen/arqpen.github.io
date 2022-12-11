@@ -94,11 +94,60 @@
             <option value="floors">Floors</option>
             <option value="floors">Cars</option>
           </select>
-          <div>
-            <a>Home</a>
-            <a>Release</a>
-            <a>About</a>
-            <a>RSS</a>
+          <div class="detll">
+            <span>Detalle</span>
+<svg id="Capa_1"   viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cxls-1 {
+        fill: #383838;
+        opacity: .33;
+      }
+    </style>
+  </defs>
+  <rect class="cxls-1" width="50" height="50"/>
+<path d="M25,3.14l18.93,10.93v21.86l-18.93,10.93L6.07,35.93V14.07L25,3.14m0-2.31L4.07,12.92v24.17l20.93,12.08,20.93-12.08V12.92L25,.83h0Z"/>
+</svg>
+<svg id="Capa_2"  viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cxls-1 {
+        fill: #fff;
+      }
+
+
+
+      .cxls-3 {
+        fill: #ccc;
+      }
+    </style>
+  </defs>
+  <polygon class="cxls-1" points="5.48 13.73 24.92 2.38 44.57 13.73 25.43 25.01 5.48 13.73"/>
+  <polygon class="cxls-1" points="25.07 47.96 44.47 36.61 45.05 13.43 24.98 25.56 25.07 47.96"/>
+  <polygon class="cxls-3" points="25.07 47.57 5.43 36.68 5.43 13.53 24.98 24.98 25.07 47.57"/>
+  <path d="M25,.83L4.07,12.92v24.17l20.93,12.08,20.93-12.08V12.92L25,.83Zm10.02,18.24l-.68-.39-9.32,5.38-9.3-5.37-.68,.39L5.76,13.73,15.74,7.97l9.28,5.36,9.26-5.34,9.98,5.76-9.24,5.33ZM5.62,13.87l9.36,5.4v.78l9.94,5.74v21.53L5.62,36.19V13.87ZM25.12,47.31V25.8l9.93-5.74v-.78l9.33-5.38v22.29l-19.26,11.12Z"/>
+</svg>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cxls-1 {
+        fill: #fff;
+      }
+
+      .cxls-2 {
+        fill: #fdd734;
+      }
+
+      .cxls-4 {
+        fill: #efa62c;
+      }
+    </style>
+  </defs>
+  <polygon class="cxls-1" points="5.48 13.73 24.92 2.38 44.57 13.73 25.43 25.01 5.48 13.73"/>
+  <polygon class="cxls-2" points="25.07 47.96 44.47 36.61 45.05 13.43 24.98 25.56 25.07 47.96"/>
+  <polygon class="cxls-4" points="25.07 47.57 5.43 36.68 5.43 13.53 24.98 24.98 25.07 47.57"/>
+  <path d="M25,.83L4.07,12.92v24.17l20.93,12.08,20.93-12.08V12.92L25,.83Zm10.02,18.24l-.68-.39-9.32,5.38-9.3-5.37-.68,.39L5.76,13.73,15.74,7.97l9.28,5.36,9.26-5.34,9.98,5.76-9.24,5.33ZM5.62,13.87l9.36,5.4v.78l9.94,5.74v21.53L5.62,36.19V13.87ZM25.12,47.31V25.8l9.93-5.74v-.78l9.33-5.38v22.29l-19.26,11.12Z"/>
+</svg>
           </div>
          </div>
       </nav>
@@ -263,7 +312,7 @@
          
          </main>
          <aside class="box">
-            <h3>Customize</h3>
+            <span>Customize</span>
             <div class="sticky">
               <div>
               <label for="scale">Scale</label>
@@ -281,6 +330,13 @@
                   <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#FDD734" id="hexcolor"></input>
                </div>
                <!-- end color-->
+               <!-- color-->
+               <div>
+                <label for="">Color</label>
+                <input type="color" id="colorpicker2" name="color" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#402528"> 
+                  <input type="text" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" value="#402528" id="hexcolor2"></input>
+               </div>
+               <!-- end color-->
                <div>
                   <label for="volume">Size</label>
                   <input type="range" id="volume" name="volume"
@@ -292,12 +348,12 @@
                      min="0" max="11">
                </div>
                <div>
-                  <input type="checkbox" id="scales" name="scales" checked>
                   <label for="scales">Shadows</label>
+                  <input type="checkbox" id="scales" name="scales" checked>
                </div>
                <div>
-                  <input type="checkbox" id="horns" name="horns">
                   <label for="horns">Silhouette only</label>
+                  <input type="checkbox" id="horns" name="horns">
                </div>
 
             </div>

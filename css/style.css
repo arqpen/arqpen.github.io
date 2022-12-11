@@ -141,6 +141,8 @@ z-index: 3;
 nav >div{display: flex;
     align-items: center;
     justify-content: space-between;}
+.detll{display: flex;align-items: center;}
+.detll svg{width: 30px;height: auto;margin-left: var(--boxM);}
 .boxCont{display: flex;margin: var(--boxM) 0;}
 .boxCont main{width: calc(75% - var(--boxM)); margin-right: var(--boxM);}
 .boxCont aside {width: 25%;}
@@ -153,6 +155,8 @@ aside .sticky >div{display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
     height: 40px;}
+aside .sticky >div label{width: 100px;}
+
 .boxCont aside input[type="text"]{width: 100px;
     padding: 6px;}
 main .gphs {display: flex;flex-wrap: wrap;}
