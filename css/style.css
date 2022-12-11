@@ -64,6 +64,21 @@ input[type="text"]{width: 100%;
 }
 input[type="text"]:focus,select:focus{box-shadow: 0 0 0 1px var(--keyC);
 }
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
 select{
 display: inline-block;
     min-width: 120px;
@@ -133,8 +148,15 @@ nav >div{display: flex;
     position: sticky;
     top: 125px;   
 }
+aside .sticky >div{display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    height: 40px;}
+.boxCont aside input[type="text"]{width: 100px;
+    padding: 6px;}
 main .gphs {display: flex;flex-wrap: wrap;}
-main .gphs >div{width: calc(25% - var(--boxM));height: 200px;margin-right: var(--boxM);margin-bottom: var(--boxM);}
+main .gphs >div{width: calc(25% - var(--boxM));height: auto;margin-right: var(--boxM);margin-bottom: var(--boxM);}
 main .gphs >div:nth-child(4n){margin-right: 0;}
 
 .export{position: fixed;width: 100%;max-width: 1100px;bottom:var(--boxM);display: flex; align-items: center;justify-content:space-between ;z-index: 4;    box-shadow: 0 3px 10px 2px rgb(0 0 0 / 5%);}
